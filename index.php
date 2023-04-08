@@ -1,19 +1,31 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Php</title>
-</head>
-<body>
+
 <?php
-    $s = 0;
-    $num = 2;
-    $b = 5;
-    $c = $s + $num;
-    for ($a = 1; $a < $b+1; $a++) {echo "$a) $c", "\n";}
+// define(MY_AGE, 18) - функция константы
+    echo 'Ведите кол-во действий: ';
+    $b = readline();
+    $a = 0;
+    for($a = 1; $a < $b+1; $a++)
+    {
+        echo "\n";
+        echo "Введите 1-ую цифру : ";
+        $s = readline(); // в языке php нет строгой типизации
+        echo "\n";
+        echo "Введите 2-ую цифру : ";
+        $num = readline();
+        echo "\n";
+
+        echo $a,") " ;
+        if ($s <= $num)
+        {
+            $c = $s + $num;
+            echo "выполнилось сложение, т.к. 1-aя > 2-ой: ",$c,"\n";
+
+        }
+
+        else
+        {
+            $c = $s - $num;
+            echo "выполнилось вычитание, т.к. 1-aя < 2-ой: " ,$c, "\n";
+        }
+    }
 ?>
-</body>
-</html>
