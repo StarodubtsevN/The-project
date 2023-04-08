@@ -9,7 +9,11 @@
 </head>
 <body>
 <?php
-echo 'hello world'; //комментарий
+    $s = 0;
+    $num = 2;
+    $b = 5;
+    $c = $s + $num;
+    for ($a = 1; $a < $b+1; $a++) {echo "$a) $c", "\n";}
 ?>
 </body>
 </html>
