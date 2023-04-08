@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-echo 'hello world'; //комментарий
+echo 'hello<br>world'; //комментарий
 ?>
 </body>
 </html>
