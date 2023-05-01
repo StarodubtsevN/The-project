@@ -1,30 +1,21 @@
-
 <?php
-// define(MY_AGE, 18) - функция константы
-    echo 'Ведите кол-во действий: ';
-    $b = readline();
-    $a = 0;
-    for($a = 1; $a < $b+1; $a++)
+    $login = filter_var(trim($_POST['login']),FILTER_SANITIZE_STRING);
+    $password = filter_var(trim($_POST['pass']),FILTER_SANITIZE_STRING);
+
+    if(mb_strlen($login) < 5)
     {
-        echo "\n";
-        echo "Введите 1-ую цифру : ";
-        $s = readline(); // в языке php нет строгой типизации
-        echo "\n";
-        echo "Введите 2-ую цифру : ";
-        $num = readline();
-        echo "\n";
-
-        echo $a,") " ;
-        if ($s <= $num)
-        {
-            $c = $s + $num;
-            echo "выполнилось сложение, т.к. 1-aя < 2-ой: ",$c,"\n";
-
-        }
-        else
-        {
-            $c = $s - $num;
-            echo "выполнилось вычитание, т.к. 1-aя > 2-ой: " ,$c, "\n";
-        }
+     echo "Недопустимая длина логина";
+      exit();
     }
+    else if(mb_strlen($password) < 3 || mb_strlen($password) > 12)
+        {
+            echo "Недопустимая длина пароля(от 2 до 12 символов)";
+        }
+        exit();// если выполнится это условие, то код, который будет ниже не выполнится
+
+
+    $mysql = new mysqli("localhost","root","root","register");
+
+    $mysql->query('INSERT INTO "users" ("login", "password"), Values ($login, $password)');
+    $mysql->close();
 ?>
