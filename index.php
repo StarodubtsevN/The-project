@@ -17,7 +17,7 @@
      }
 
 
-    /*$mysql = new mysqli("localhost","root","root","register");
+    /*$mysql = new mysqli("localhost","root","","registers");
 
     $mysql->query("INSERT INTO `users`(login, password), Values ($login, $password)");
     $mysql->close();*/
