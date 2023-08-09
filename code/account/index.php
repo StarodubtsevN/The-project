@@ -1,26 +1,18 @@
 <?php
+$dbc = mysqli_connect("localhost", "root","", "API");
 
-if (isset($_POST['FormSubmit'])){
-    $api = filter_var(trim($_POST['API']),
-        FILTER_SANITIZE_STRING);
+ $data = json_decode(file_get_contents('php://index'), true);
 
-    $_form=$_POST['id'];
-    $form=$_POST['api'];
 
-    $mysqli = new mysqli("localhost", "root","", "API");
-    if ($mysqli ->connect_errno){
+    if ($dbc ->connect_errno){
         echo "Извините возникла проблема :(";
-        mysqli_connect_error();
+      exit;
     }
 
-    $id = '"'.$mysqli->real_escape_string($_form).'"';
-    $API = '"'.$mysqli->real_escape_string($api).'"';
+    $query = "INSERT INTO US_API (us_api) VALUES('пРИВЕТ')";
+    $result = $dbc->query($query);
 
-    $query = "INSERT INTO US_API (user_id, us_api) VALUES($id, $api)";
-    $result = $mysqli->query($query);
+    if($result) echo "Получилось !";
 
-    if($result){
-        print ('Получилось !'. '<br>');
-    }
-    $mysqli->close();
-}
+    mysqli_close($dbc);
+
