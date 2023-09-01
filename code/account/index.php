@@ -1,18 +1,27 @@
 <?php
-$dbc = mysqli_connect("localhost", "root","", "API");
 
- $data = json_decode(file_get_contents('php://index'), true);
+$dbc = mysqli_connect("localhost", "root", "", "API");
 
+if (isset($_POST['api'])){
 
-    if ($dbc ->connect_errno){
+    $API=$_POST['api'];
+
+    if (empty($_POST['api'])) exit("Поле не заполнено");
+
+    if ($dbc->connect_errno) {
         echo "Извините возникла проблема :(";
-      exit;
+        exit;
     }
 
-    $query = "INSERT INTO US_API (us_api) VALUES('пРИВЕТ')";
+    $api= '"' .$dbc->real_escape_string($API). '"';
+
+    $query = "INSERT INTO US_API (api_key) VALUES('$API')";
+
     $result = $dbc->query($query);
 
-    if($result) echo "Получилось !";
+    if ($result) echo "Получилось !";
 
     mysqli_close($dbc);
+}
+
 
