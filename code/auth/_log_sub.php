@@ -1,24 +1,15 @@
-<?php
-    $login = filter_var(trim($_POST['login']),
-        FILTER_SANITIZE_STRING);
-    $password = filter_var(trim($_POST['pass']),
-        FILTER_SANITIZE_STRING);
+<?php require_once('../_partials/_header.php') ?>
+<body>
+    <div class=" container mt-4 ">
+        <h1>Вход</h1>
 
-    if(mb_strlen($login) < 5)
-    {
-     echo "Недопустимая длина логина";
-      exit();
-    }
-
-    else if(mb_strlen($password) < 3 || mb_strlen($password) > 12)
-     {
-         echo "Недопустимая длина пароля(от 2 до 12 символов)";
-          exit();// если выполнится это условие, то код, который будет ниже не выполнится
-     }
-
-
-    /*$mysql = new mysqli("localhost","root","","registers");
-
-    $mysql->query("INSERT INTO `users`(login, password), Values ($login, $password)");
-    $mysql->close();*/
-?>
+        <form action="_log_sub_old.php" method="post">
+            <input type="text" class="form-control" name="login" id="login" placeholder="Введите логин">
+          <br>
+          <input type="password" class="form-control" name="pass" id="pass" placeholder="Введите пароль">
+          <br>
+          <button class="btn btn-success" type="submit">Войти</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -16,7 +16,7 @@ if (isset($_POST['api'])){
 
     $api= '"' .$dbc->real_escape_string($API). '"';
 
-    $query = "INSERT INTO US_API (api_key) VALUES('$API')";
+    $query = "INSERT INTO US_API (api_key) VALUES('$api')";
 
     $result = $dbc->query($query);
 
