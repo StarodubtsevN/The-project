@@ -1,5 +1,5 @@
 <?php
-    $login = filter_var(trim($_POST['login']),
+/*    $login = filter_var(trim($_POST['login']),
         FILTER_SANITIZE_STRING);
     $password = filter_var(trim($_POST['pass']),
         FILTER_SANITIZE_STRING);
@@ -21,4 +21,5 @@
 
     $mysql->query("INSERT INTO `users`(login, password), Values ($login, $password)");
     $mysql->close();*/
+echo ('123')
 ?>

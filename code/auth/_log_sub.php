@@ -3,7 +3,7 @@
     <div class=" container mt-4 ">
         <h1>Вход</h1>
 
-        <form action="_log_sub_old.php" method="post">
+        <form action="log_in.php" method="post">
             <input type="text" class="form-control" name="login" type="email" placeholder="Введите email">
           <br>
           <input type="password" class="form-control" name="pass" type="pass" placeholder="Введите пароль">
