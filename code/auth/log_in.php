@@ -21,5 +21,35 @@
 
     $mysql->query("INSERT INTO `users`(login, password), Values ($login, $password)");
     $mysql->close();*/
-echo ('123')
+// подключились к бд
+
+$DB = mysqli_connect("localhost", "root", "", "API");
+
+if ($DB->connect_errno) {
+    echo "Извините возникла проблема с подключением к бд :(";
+    exit;
+}
+if (isset($_POST['login']) || isset($_POST['pass'])) {
+    $log=$_POST['login'];
+    $pas=$_POST['pass'];
+    $_log= '"' .$DB->real_escape_string($log). '"'; //_... - означает уже переведенные данные в формат бд
+    $_pas= '"' .$DB->real_escape_string($pas). '"';
+    if (empty($_POST['login']) || empty($_POST['pass'])){
+        echo ("Какое-то поле не заполнено");
+
+        exit;
+    }
+    $query = $DB->prepare('SELECT Count(*) as count FROM registration  
+                         WHERE email = \''.$_log.'\' AND pass =  \''.$_pas.'\';');
+    $query->execute();
+    $query->bind_result($res);
+    $query->fetch();
+    if($res == 1) {
+        echo ('Получилось');
+        //header("Location: Your_URL");
+    } else {
+        echo "Ошибка";
+    }
+}
+
 ?>
