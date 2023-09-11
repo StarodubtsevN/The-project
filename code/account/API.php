@@ -1,14 +1,9 @@
 <?php require_once('../_partials/_header.php') ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Сохранение</title>
-</head>
 <body>
 <div class=" container mt-4 ">
-    <h1>Сохранение ключа</h1>
+    <h1>Сохранение ключа API</h1>
       <form method="post" action="keep_api.php" >
           <label>
               <input type="text" class="form-control" name="api" placeholder="Введите свой API:">
