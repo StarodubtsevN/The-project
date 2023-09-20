@@ -45,8 +45,7 @@ if (isset($_POST['login']) || isset($_POST['pass'])) {
     $query->bind_result($res);
     $query->fetch();
     if($res == 1) {
-        echo ('Получилось');
-        //header("Location: Your_URL");
+        header('Location: ../account/index.php');
     } else {
         echo "Ошибка";
     }

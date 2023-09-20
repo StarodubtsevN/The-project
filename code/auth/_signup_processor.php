@@ -28,7 +28,7 @@ if (isset($_POST['fam']) || isset($_POST['name']) || isset($_POST['em']) || isse
     $que= "INSERT INTO registration (surname, name, email, pass) VALUES ('$_fam','$_name','$_em','$_pass')";
     $res = $db->query($que);
 
-    if ($res) echo ("Получилось, но тут должна быть главная страница со всем");
+    if ($res) header('Location: ../account/index.php');
 }
 
 // нужно реализовать валидацию

@@ -1,4 +1,6 @@
-<?php require_once('../_partials/_header.php') ?>
+<?php
+require('../_partials/_helpers.php');
+require_once('../_partials/_header.php') ?>
 <body>
     <div class=" container mt-4 ">
         <h1>Вход</h1>

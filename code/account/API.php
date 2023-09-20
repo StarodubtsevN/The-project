@@ -1,4 +1,7 @@
-<?php require_once('../_partials/_header.php') ?>
+<?php
+require('../_partials/_helpers.php');
+require_once('../_partials/_header.php')
+?>
 
     <title>Сохранение</title>
 <body>
@@ -10,9 +13,9 @@
               <br>
               <button class="btn btn-success" type="submit">Сохранить</button> <br>
 
-              <a href="index.php">Личный кабинет</a><br>
-              <a href="account/subscription/sub.php">Подписки</a><br>
-              <a href="_log_sub.php">Выход</a><br>
+              <a href="<?= url('account/index') ?>">Личный кабинет</a><br>
+              <a href="<?= url('account/subscription/sub') ?>">Подписки</a><br>
+              <a href="<?= url('auth/signup') ?>">Выход</a><br>
           </label>
       </form>
 </div>
