@@ -5,6 +5,9 @@ require('../_partials/_header.php');
 <html>
 <body>
 <div class=" container mt-4 ">
+
+
+
     <title>Главная страница</title>
     <a>Главная страница</a><br>
     <a href="<?= url('account/index') ?>">Личный кабинет</a><br>
