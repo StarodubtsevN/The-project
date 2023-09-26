@@ -31,8 +31,8 @@ require('../_partials/_header.php');
             </div>
 
             <div class="task">
-                <div class="in-progress">in-progress</div>
-                <div class="done">done</div>
+                <div class="in-progress">in-progress:</div>
+                <div class="done">done:</div>
             </div>
         </div>
     </div>
