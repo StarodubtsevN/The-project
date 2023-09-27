@@ -1,37 +1,43 @@
 <pre>
 <?php
+const IN_PROGRESS = "in progress";
+const TESTING = "testing";
+const DONE = "done";
+
 
 $dc = mysqli_connect("localhost", "root", "", "API");
-if ($dc->connect_errno) {
-    echo "Извините возникла проблема :(";
-    exit;
+if ($dc->connect_error) {
+    die("Ошибка соединения: " . $dc->connect_error);
 }
 
-/*$task_id= ;
-$status=;
-$project_id=;
-$created_at=;
+$result = $dc->query("SELECT * FROM tasks ORDER BY task_id, created_at");
+$data = array();
+$developerScore = [];
+$testerScore = [];
 
-$query = "INSERT INTO tasks (task_id, status, project_id, created_at) VALUES('$task_id, $status, $project_id, $created_at')";
-$result = $dc->query($query);
+$rows = $result->fetch_all(MYSQLI_ASSOC);
 
-if ($result) echo "Получилось !";
-mysqli_close($dc);*/
+foreach ($rows as $i => $row) {
+    if (!isset($developerScore[$row['task_id']])) {
+        $developerScore[$row['task_id']] = 0;
+    }
 
-$result = $dc->query("SELECT * FROM tasks");
+    if (!isset($testerScore[$row['task_id']])) {
+        $testerScore[$row['task_id']] = 0;
+    }
 
-$arr = array();
-
-while ($row = $result->fetch_assoc()) {
-    var_dump($row);
-    var_dump($row['status']);
-//    foreach ($row as $key=>$value)
-//        $arr[$row['id']][] = array($key =>  $value);
+    if ($row['status'] === TESTING && isset($rows[$i + 1]) && $rows[$i + 1]['status'] === DONE) {
+        $developerScore[$row['task_id']] += 1;
+    } elseif ($row['status'] === TESTING && isset($rows[$i + 1]) && $rows[$i + 1]['status'] === IN_PROGRESS) {
+        $testerScore[$row['task_id']] += 0.25;
+    }
 }
-//for ($i = 0; $i < count($arr); $i++)
-//{
-//    echo $arr[$i]." ";
-//}
 
+echo "Счет разработчиков:" . array_sum($developerScore) . "\n";
+echo "Счет тестировщиков:" . array_sum($testerScore);
+
+// Закрытие соединения с базой данных
+$dc->close();
 ?>
 </pre>
+
