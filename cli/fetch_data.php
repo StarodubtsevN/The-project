@@ -1,11 +1,24 @@
 <?php
+$dbc= mysqli_connect("localhost", "root", "", "API");
 
-$url = "https://redmine.shellpea.com/projects/p-n-t/issues.json";
+if ($dbc->connect_error) {
+    die("Ошибка соединения: " . $dbc->connect_error);
+}
+
 
 $options = array(
-    'project_id' => 'p-n-t',
-    'issue_id' => 2084
+    'updated_on' => '>=2023-10-05T16:35:00Z',
 );
+
+// @todo поработать над этим
+// $projectSettigns = SELECT * FROM project_settings WHERE user_id = $_SESSION['id']]
+// $options = array(
+//    'updated_on' => '>=' . $projectSettigns['last_update_date'],
+//);
+// $url = ['project_url'] . '/issues.json?' . http_build_query($options);
+// $headers[] = 'X-Redmine-API-Key:' . $projectSettings['api_key'];
+
+$url = "https://redmine.shellpea.com/projects/p-n-t/issues.json?" . http_build_query($options);
 
 $headers = [
     'X-Redmine-API-Key: b2ccdfa95816fc40268d96246195f6845b7581da',
@@ -24,13 +37,15 @@ $data = json_decode($response, true);
 //var_dump($data);
 
 foreach ($data['issues'] as $issue) {
-    echo $issue['status']['name'];
-    echo PHP_EOL;
+    $status = $dbc->real_escape_string($issue['status']['name']);
+    $issueId = $issue['id'];
+
+    $query = "INSERT INTO tasks (status, task_id) VALUES('$status', $issueId)";
+
+    $result = $dbc->query($query);
 }
 
 curl_close($ch);
-
-
 
 //curl -H "Content-Type: application/json" -H "X-Redmine-API-Key: b2ccdfa95816fc40268d96246195f6845b7581da" -X GET https://redmine.shellpea.com/projects/p-n-t/issues
 

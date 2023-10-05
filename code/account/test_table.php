@@ -26,9 +26,9 @@ foreach ($rows as $i => $row) {
         $testerScore[$row['task_id']] = 0;
     }
 
-    if ($row['status'] === TESTING && isset($rows[$i + 1]) && $rows[$i + 1]['status'] === DONE) {
+    if (strtolower($row['status']) === TESTING && isset($rows[$i + 1]) && strtolower($rows[$i + 1]['status']) === DONE) {
         $developerScore[$row['task_id']] += 1;
-    } elseif ($row['status'] === TESTING && isset($rows[$i + 1]) && $rows[$i + 1]['status'] === IN_PROGRESS) {
+    } elseif (strtolower($row['status']) === TESTING && isset($rows[$i + 1]) && strtolower($rows[$i + 1]['status']) === IN_PROGRESS) {
         $testerScore[$row['task_id']] += 0.25;
     }
 }

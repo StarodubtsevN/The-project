@@ -1,27 +1,6 @@
 <?php
-/*    $login = filter_var(trim($_POST['login']),
-        FILTER_SANITIZE_STRING);
-    $password = filter_var(trim($_POST['pass']),
-        FILTER_SANITIZE_STRING);
 
-    if(mb_strlen($login) < 5)
-    {
-     echo "Недопустимая длина логина";
-      exit();
-    }
-
-    else if(mb_strlen($password) < 3 || mb_strlen($password) > 12)
-     {
-         echo "Недопустимая длина пароля(от 2 до 12 символов)";
-          exit();// если выполнится это условие, то код, который будет ниже не выполнится
-     }
-
-
-    /*$mysql = new mysqli("localhost","root","","registers");
-
-    $mysql->query("INSERT INTO `users`(login, password), Values ($login, $password)");
-    $mysql->close();*/
-// подключились к бд
+session_start();
 
 $DB = mysqli_connect("localhost", "root", "", "API");
 
@@ -39,12 +18,13 @@ if (isset($_POST['login']) || isset($_POST['pass'])) {
 
         exit;
     }
-    $query = $DB->prepare('SELECT Count(*) as count FROM registration  
+    $query = $DB->prepare('SELECT id FROM registration  
                          WHERE email = \''.$_log.'\' AND pass =  \''.$_pas.'\';');
     $query->execute();
-    $query->bind_result($res);
+    $query->bind_result($userId);
     $query->fetch();
-    if($res == 1) {
+    if($userId) {
+        $_SESSION['id'] = $userId;
         header('Location: ../account/index.php');
     } else {
         echo "Ошибка";

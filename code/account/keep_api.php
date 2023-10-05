@@ -1,7 +1,10 @@
 <?php
 
-$dbc = mysqli_connect("localhost", "root", "", "API");
+require('../_partials/_helpers.php');
 
+ensureLogIn();
+
+$dbc = mysqli_connect("localhost", "root", "", "API");
 if (isset($_POST['api'])) {
     $API = $_POST['api'];
 
@@ -17,11 +20,10 @@ if (isset($_POST['api'])) {
 
     $api = '"' . $dbc->real_escape_string($API) . '"';
 
-    $query = "INSERT INTO US_API (api_key) VALUES('$api')";
+    $query = "INSERT INTO project_settings (api_key) VALUES('$api')";
 
     $result = $dbc->query($query);
 
     if ($result) echo "Получилось !";
     mysqli_close($dbc);
 }
-

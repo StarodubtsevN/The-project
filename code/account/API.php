@@ -1,6 +1,8 @@
 <?php
 require('../_partials/_helpers.php');
-require_once('../_partials/_header.php')
+require_once('../_partials/_header.php');
+
+ensureLogIn();
 ?>
 
     <title>Сохранение</title>
