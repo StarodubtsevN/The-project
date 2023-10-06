@@ -1,6 +1,7 @@
 <?php
 require('../_partials/_helpers.php');
 require('../_partials/_header.php');
+ensureLogIn();
 ?>
 <html lang="en">
 <body>
@@ -8,10 +9,10 @@ require('../_partials/_header.php');
     <title>Главная страница</title>
 
     <a>Главная страница</a><br>
-    <a href="<?= url('account/index') ?>">Личный кабинет</a><br>
-    <a href="<?= url('account/subscription/sub') ?>">Подписки</a><br>
-    <a href="<?= url('account/API') ?>">Сохранение API</a><br>
-    <a href="<?= url('auth/signup') ?>">Выход</a><br>
+    <a href="<?= url('account/acc_form') ?>">Личный кабинет</a><br>
+    <a href="<?= url('account/subscription/sub_form') ?>">Подписки</a><br>
+    <a href="<?= url('account/api_form') ?>">Настройки Redmine</a><br>
+    <a href="<?= url('auth/_sign-in_form') ?>">Выход</a><br>
 
     <div>
         <p class="pro"> Programmer </p>

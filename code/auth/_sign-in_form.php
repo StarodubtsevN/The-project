@@ -25,7 +25,7 @@ require_once('../_partials/_header.php') ?>
         <br>
         <button class="btn btn-success">Зарегистрироваться</button>
         <br>
-        <a href="_log_sub.php">Уже есть аккаунт</a>
+        <a href="_log-in_form.php">Уже есть аккаунт</a>
 
     </form>
 </div>

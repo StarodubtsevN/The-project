@@ -25,7 +25,7 @@ if (isset($_POST['login']) || isset($_POST['pass'])) {
     $query->fetch();
     if($userId) {
         $_SESSION['id'] = $userId;
-        header('Location: ../account/index.php');
+        header('Location: ../account/acc_form.php');
     } else {
         echo "Ошибка";
     }

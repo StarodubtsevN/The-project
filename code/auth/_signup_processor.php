@@ -16,7 +16,7 @@ if (isset($_POST['fam']) || isset($_POST['name']) || isset($_POST['em']) || isse
 // проверка на заполнение еще нужно доделать, чтобы выводилось сообщение в то поле, которое не заполнено
     if (empty($_POST['fam']) || empty($_POST['name']) || empty($_POST['em']) || empty($_POST['pass'])){
         echo ("Какое-то поле не заполнено");
-        //header('Location: /pnt/code/auth/signup.php');
+        //header('Location: /pnt/code/auth/_sign-in_form.php');
         exit;
     }
 // перевод данных в формат бд
@@ -28,11 +28,6 @@ if (isset($_POST['fam']) || isset($_POST['name']) || isset($_POST['em']) || isse
     $que= "INSERT INTO registration (surname, name, email, pass) VALUES ('$_fam','$_name','$_em','$_pass')";
     $res = $db->query($que);
 
-    if ($res) header('Location: ../account/index.php');
+    if ($res) header('Location: ../account/acc_form.php');
 }
 
-// нужно реализовать валидацию
-
-//var_dump($_POST);
-
-//header('Location: signup.php');
