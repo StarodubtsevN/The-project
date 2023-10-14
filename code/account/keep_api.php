@@ -1,7 +1,9 @@
 <?php
+session_start();
+global $userId;
 
 require('../_partials/_helpers.php');
-
+include('../auth/_log-in_processor.php');
 ensureLogIn();
 
 $dbc = mysqli_connect("localhost", "root", "", "API");
@@ -23,8 +25,8 @@ if (isset($_POST['api']) && isset($_POST['url_project'])) {
 
     $api = $dbc->real_escape_string($API);
     $url=  $dbc->real_escape_string($url_project);
-
-    $query = "INSERT INTO project_settings (api_key, url_project) VALUES('$api', '$url')";
+    $userId = $_SESSION['id'];
+    $query = "INSERT INTO project_settings (user_id, api_key, url_project) VALUES('$userId','$api', '$url')";
 
     $result = $dbc->query($query);
     if ($result) echo "Получилось !";

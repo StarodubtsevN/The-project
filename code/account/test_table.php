@@ -3,7 +3,8 @@
 const IN_PROGRESS = "in progress";
 const TESTING = "testing";
 const DONE = "done";
-
+global $dev_score;
+global $test_score;
 
 $dc = mysqli_connect("localhost", "root", "", "API");
 if ($dc->connect_error) {
@@ -32,11 +33,9 @@ foreach ($rows as $i => $row) {
         $testerScore[$row['task_id']] += 0.25;
     }
 }
+$dev_score = array_sum($developerScore);
+$test_score = array_sum($testerScore);
 
-echo "Счет разработчиков:" . array_sum($developerScore) . "\n";
-echo "Счет тестировщиков:" . array_sum($testerScore);
-
-// Закрытие соединения с базой данных
 $dc->close();
 ?>
 </pre>

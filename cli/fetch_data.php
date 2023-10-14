@@ -8,7 +8,7 @@ if ($dbc->connect_error) {
 }
 
 $options = array(
-    'updated_on' => '>=2023-10-04T16:35:00Z',
+    'updated_on' => '>=2023-10-12T16:35:00Z',
 );
 
 $session_id = $_SESSION['id'];
@@ -39,10 +39,8 @@ var_dump($data);
 foreach ($data['issues'] as $issue) {
     $status = $dbc->real_escape_string($issue['status']['name']);
     $issueId = $issue['id'];
-
     $query = "INSERT INTO tasks (status, task_id) VALUES('$status', '$issueId')";
     $result = $dbc->query($query);
-
 }
 curl_close($ch);
 ?>

@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+global $userId;
 
 $DB = mysqli_connect("localhost", "root", "", "API");
 
@@ -27,9 +28,6 @@ if (isset($_POST['login']) || isset($_POST['pass'])) {
 
     if($userId) {
         $_SESSION['id'] = $userId;
-        $user_id = $DB->real_escape_string($userId);
-// @todo поработать над этим
-        $que = " INSERT INTO project_settings (user_id) VALUES ('$userId');";
         header('Location: ../account/acc_form.php');
     } else {
         echo "Ошибка";
