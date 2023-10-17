@@ -1,55 +1,50 @@
-<pre>
 <?php
-session_start();
 $dbc= mysqli_connect("localhost", "root", "", "API");
 
 if ($dbc->connect_error) {
     die("Ошибка соединения: " . $dbc->connect_error);
 }
 
-$options = array(
-    'updated_on' => '>=2023-10-12T16:35:00Z',
-);
-
-$session_id = $_SESSION['id'];
-
-$projectSettigns = $dbc->prepare("SELECT * FROM project_settings WHERE user_id = $session_id");
+$projectSettigns = $dbc->prepare("SELECT * FROM project_settings");
 $projectSettigns->execute();
-$projectSettigns->bind_result($id, $userId, $api_key, $url, $updated_at);
-$projectSettigns->fetch();
-$projectSettigns->close();
-var_dump($userId, $api_key, $url, $updated_at);
+$projectSettigns->bind_result($id, $userId, $api_key, $url, $updated_at, $last_sync_date);
+$projectSettigns->store_result();
 
-/*$options = [
-    'updated_on' => '>=' . $updated_at,
- ];*/
+while ($projectSettigns->fetch()) {
+    $redmineReadDate = date('Y-m-d H:i:s');
 
-$url_p = $url . '.json?' . http_build_query($options);
- $headers[] =  'X-Redmine-API-Key: ' . $api_key;
+    $options = array(
+        'updated_on' => '>=' . date('Y-m-d\TH:i:s', strtotime($last_sync_date)) . 'Z',
+    );
+//var_dump($options); die;
+//$projectSettigns->close();
+//    var_dump($id, $userId, $api_key, $url, $updated_at);
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_URL, $url_p);
+    $url_p = $url . '.json?' . http_build_query($options);
+    $headers[] = 'X-Redmine-API-Key: ' . $api_key;
 
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_URL, $url_p);
 
-$response = curl_exec($ch);
-$data = json_decode($response, true);
-var_dump($data);
-foreach ($data['issues'] as $issue) {
-    $status = $dbc->real_escape_string($issue['status']['name']);
-    $issueId = $issue['id'];
-    $query = "INSERT INTO tasks (status, task_id) VALUES('$status', '$issueId')";
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+//    var_dump($url_p); die;
+
+    $response = curl_exec($ch);
+    $data = json_decode($response, true);
+//    var_dump($data);
+//    die;
+    foreach ($data['issues'] as $issue) {
+        $status = $dbc->real_escape_string($issue['status']['name']);
+        $issueId = $issue['id'];
+        $query = "INSERT INTO tasks (status, task_id) VALUES('$status', '$issueId')";
+        $result = $dbc->query($query);
+    }
+
+    $query = "UPDATE project_settings SET last_sync_date = '$redmineReadDate'";
     $result = $dbc->query($query);
+
+    curl_close($ch);
 }
-curl_close($ch);
-?>
-</pre>
-
-<!-- Comments(old scripts)
-//$url = "https://redmine.shellpea.com/projects/p-n-t/issues.json?" . http_build_query($options);
-
-/*$headers = [
-'X-Redmine-API-Key: b2ccdfa95816fc40268d96246195f6845b7581da',
-'Content-Type: application/json',
-];*/-->
+$projectSettigns->close();

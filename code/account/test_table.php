@@ -35,8 +35,8 @@ foreach ($rows as $i => $row) {
 }
 $dev_score = array_sum($developerScore);
 $test_score = array_sum($testerScore);
-
+/*echo $dev_score;
+echo $test_score;*/
 $dc->close();
 ?>
 </pre>
-
