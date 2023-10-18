@@ -1,3 +1,473 @@
-form{
-    width: 500px;
+body {
+    margin: 0;
+    background-color: #A4F9CF;
+    font-family: 'Commissioner', sans-serif;
+}
+
+.registration {
+    background-color: #A4F9CF;
+    width: 100%;
+    height: 960px;
+}
+
+.container {
+    display: inline-block;
+    position: absolute;
+    left: 39%;
+    top: 21%;
+    width: 410px;
+    height: 555px;
+    flex-shrink: 0;
+    background-color: #F6F6F6;
+    border-radius: 30px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.photo-logo {
+    position: absolute;
+    left: 33%;
+    top: -220px;
+}
+
+.head {
+    display: inline-block;
+    position: absolute;
+    margin: 0;
+    width: 125px;
+    height: 28px;
+    left: 142px;
+    top: 21px;
+    color: #000;
+    text-align: center;
+    font-family: Commissioner;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.list {
+    display: inline-block;
+    position: absolute;
+    left: 18px;
+    top: 73px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.text-block {
+    width: 373px;
+    height: 51px;
+    box-sizing: border-box;
+    padding-left: 15px;
+    border-radius: 22px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background: #F6F6F6;
+    margin-bottom: 15px;
+    color: #000;
+    font-family: Commissioner;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    
+}
+
+.text-block-last {
+    width: 373px;
+    height: 51px;
+    box-sizing: border-box;
+    padding-left: 15px;
+    border-radius: 22px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background: #F6F6F6;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #000;
+    font-family: Commissioner;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+
+.bottom-reg {
+    position: absolute;
+    top: 401px;
+    left: 18px;
+    width: 373px;
+    height: 61px;
+    border-radius: 22px;
+    background: #A4F9CF;
+}
+
+.text-bottom {
+    display: inline-block;
+    width: 209px;
+    height: 25px;
+    margin-left: 82px;
+    margin-top: 18px;
+    text-align: center;
+    color: #000;
+    font-family: Commissioner;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.line {
+    position: absolute;
+    width: 347px;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    top: 498px;
+    left: 31px;
+}
+
+.No {
+    display: inline-block;
+    position: absolute;
+    left: 152px;
+    top: 512px;
+    width: 120px;
+    height: 14px;
+    color: #000;
+    text-align: center;
+    font-family: Commissioner;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.option-window {
+    display: inline-block;
+    width: 229px;
+    height: 960px;
+    border-right: 2px solid rgba(0, 0, 0, 0.50);
+}
+
+.photo {
+    box-sizing: border-box;
+    width: 162px;
+    height: 162px;
+    margin: 10px 29px 0 38px;
+    background-color: #fff;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.account {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    width: 229px;
+    height: 60px;
+    background-color: #A4F9CF;
+    border: 0;
+    border-top: 2px solid rgba(0, 0, 0, 0.50);
+    
+}
+
+.account-text {
+    display: inline-block;
+    margin-top: 10px;
+    width: 200px;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background: #F6F6F6;
+    padding: 5px 30px 5px 30px;
+    border-radius: 10px;
+    text-align: center;
+    white-space: nowrap;
+    font-family: Commissioner;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px
+}
+
+.left-score {
+    position: absolute;
+    left: 475px;
+    top: 102px;
+    width: 460px;
+    height: 460px;
+    border-radius: 40px;
+    border: 6px solid rgba(0, 0, 0, 0.50);
+    background: #F6F6F6;
+}
+
+.right-score {
+    position: absolute;
+    left: 1220px;
+    top: 102px;
+    width: 460px;
+    height: 460px;
+    border-radius: 40px;
+    border: 6px solid rgba(0, 0, 0, 0.50);
+    background: #F6F6F6;
+}
+
+.score-l {
+    position: absolute;
+    margin: 100px 155px;
+    width: 150px;
+    height: 240px;
+    font-style: inherit;
+    color: #E52632;
+    font-size: 230px;
+    text-align: center;   
+}
+
+.score-r {
+    position: absolute;
+    margin: 100px 155px;
+    width: 150px;
+    height: 240px;
+    font-style: inherit;
+    color: #18C93F;
+    font-size: 230px;
+    text-align: center;
+}
+
+.colon {
+    position: absolute;
+    top: 222px;
+    left: 1053px;
+    width: 38px;
+    height: 220px;
+}
+
+.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 38px;
+    background-color: rgba(35, 35, 35, 0.50);
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 38px;
+    background-color: rgba(35, 35, 35, 0.50);
+}
+
+.programist {
+    position: absolute;
+    display: inline-block;
+    left: 511px;
+    top: 20px;
+    width: 377px;
+    height: 44px;
+    color: #000;
+    text-align: center;
+    font-family: Commissioner;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 50% */
+}
+
+.tester {
+    position: absolute;
+    display: inline-block;
+    left: 1284px;
+    top: 20px;
+    width: 332px;
+    height: 44px;
+    color: #000;
+    text-align: center;
+    font-family: Commissioner;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.task {
+    position: absolute;
+    left: 475px;
+    top: 612px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 1217px;
+    height: 300px;
+    border-radius: 40px;
+    border: 3px solid rgba(0, 0, 0, 0.50);
+    background: #F6F6F6;
+}
+
+.in-progress {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 580px;
+    height: 280px;
+    margin: 18px 0 0 25px;
+    
+}
+
+.task-text {
+    margin: 0;
+    height: 280px;
+}
+
+.task-real {
+    color: #000;
+    font-family: Commissioner;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5; 
+}
+
+h4 {
+    margin: 0 0 20px 0;
+    font-size: 30px;
+}
+
+.done {
+    position: absolute;
+    display: inline-block;
+    box-sizing: border-box;
+    right: 22px;
+    top: 18px;
+    width: 580px;
+    height: 280px;
+    text-align: right;   
+}
+
+.done-text {
+    margin: 0;
+    height: 280px;
+}
+
+.done-real {
+    color: #000;
+    font-family: Commissioner;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5; 
+}
+
+
+
+.window-account {
+    display: inline-block;
+    position: absolute;
+    width: 1538px;
+    height: 422px;
+    top: 75px;
+    left: 300px;
+    border-radius: 40px;
+    background: #F6F6F6;
+}
+
+.image-home {
+    position: absolute;
+    left: 41px;
+    top: 40px;
+}
+
+.home-name {
+    display: inline-block;
+    position: absolute;
+    left: 156px;
+    top: 78px;
+    color: #000;
+    text-align: center;
+    font-family: Commissioner;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+}
+
+.home-surname {
+    display: inline-block;
+    position: absolute;
+    left: 156px;
+    top: 40px;
+    color: #000;
+    text-align: center;
+    font-family: Commissioner;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.home-organisation {
+    display: inline-block;
+    position: absolute;
+    left: 30px;
+    top: 170px;
+    color: #000;
+    text-align: center;
+    font-family: Commissioner;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.home-status {
+    display: inline-block;
+    position: absolute;
+    left: 30px;
+    top: 210px;
+    color: #000;
+    text-align: center;
+    font-family: Commissioner;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    
+}
+
+.head-readmine {
+    display: inline-block;
+    position: absolute;
+    margin: 0;
+    width: 410px;
+    height: 28px;
+    align-items: center;
+    top: 21px;
+    color: #000;
+    text-align: center;
+    font-family: Commissioner;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.list-read {
+    top: 70px;
+}
+
+.container-read {
+    top: 40%;
+    height: 300px;
+}
+
+.bottom-reg-read {
+    top: 220px;
+}
+
+.photo-logo-read {
+    position: absolute;
+    left: 33%;
+    top: -130px;
 }

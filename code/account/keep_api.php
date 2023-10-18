@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 global $userId;
 
 require('../_partials/_helpers.php');
@@ -29,6 +29,5 @@ if (isset($_POST['api']) && isset($_POST['url_project'])) {
     $query = "INSERT INTO project_settings (user_id, api_key, url_project) VALUES('$userId','$api', '$url')";
 
     $result = $dbc->query($query);
-    if ($result) echo "Получилось !";
     mysqli_close($dbc);
 }
