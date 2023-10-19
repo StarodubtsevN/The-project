@@ -72,15 +72,15 @@ ensureLogIn();
         </p>
         <ul class="list list-read">
             <li class="list-blank text-blank-read">
-                <input class="text-block" name="api" placeholder="Ссылка на проект">
+                <input class="text-block" name="api" placeholder="API-key">
             </li>
             <li class="list-blank text-blank-read">
-                <input class="text-block" name="url_project" placeholder="API-key">
+                <input class="text-block" name="url_project" placeholder="Ссылка на проект">
             </li>
         </ul>
-        <a href="#" class="bottom-reg bottom-reg-read">
-            <button class="text-bottom" type="submit">Сохранить</button> <br>
-        </a>
+        <button href="#" class="bottom-reg bottom-reg-read">
+            Сохранить
+        </button>
     </div>
 </form>
 </div>
