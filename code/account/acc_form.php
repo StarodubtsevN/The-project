@@ -6,30 +6,6 @@ ensureLogIn();
 global $dev_score;
 global $test_score;
 ?>
-<!--/*<html lang="en">
-<body>
-<div class=" container mt-4 ">
-    <h1>Главная страница</h1>
-
-
-    <div>
-        <p class="dev"> <span class="dev-score">Developer's score:/*echo $dev_score*/ </span> </p>
-        <p class="test"> <span class="test-score">Tester's score: /*echo $test_score*/ </span> </p>
-          <br>
-        <div class="colon">
-            <div class="top">top</div>
-                <div class="bottom">bottom</div>
-            </div>
-
-            <div class="task">
-                <div class="in-progress">in-progress:</div>
-                <div class="done">done:</div>
-            </div>
-    </div>
-</div>
-</body>
-</html>-->
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>

@@ -1,36 +1,7 @@
 <?php
 require('../_partials/_helpers.php');
 require_once('../_partials/_header.php') ?>
-<!--<body>
-    <div class=" container mt-4 ">
-        <h1>Вход</h1>
 
-        <form action="_log-in_processor.php" method="post">
-            <input type="text" class="form-control" name="login" type="email" placeholder="Введите email">
-          <br>
-          <input type="password" class="form-control" name="pass" type="pass" placeholder="Введите пароль">
-          <br>
-          <button class="btn btn-success" type="submit">Войти</button>
-            <br>
-            <a href="_sign-in_form.php">Нет аккаунта</a>
-        </form>
-    </div>
-</body>
-</html>-->
-
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P&T страница входа</title>
-    <link rel="stylesheet" href="../../css/Normalize copy.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Commissioner&display=swap" rel="stylesheet">
-</head>
-<body>
 <div class="registration">
     <svg class="photo-logo" width="640" height="640" viewBox="0 0 640 640" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <rect width="640" height="640" fill="url(#pattern0)"/>
