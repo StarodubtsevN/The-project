@@ -40,15 +40,15 @@ require_once('../_partials/_header.php') ?>
 
                 </li>
                 <li class="list-blank">
-                    <input class="text-block" type="email" name="em" placeholder="Пароль">
+                    <input class="text-block" type="text" name="pass" placeholder="Пароль">
 
                 </li>
                 <li class="list-blank">
-                    <input class="text-block" type="email" name="em" placeholder="Название организации">
+                    <input class="text-block" type="text" name="organization" placeholder="Название организации">
 
                 </li>
                 <li class="list-blank">
-                    <input class="text-block-last" type="password" name="pass" placeholder="Должность">
+                    <input class="text-block-last" type="password" name="position" placeholder="Должность">
 
                 </li>
             </ul>
