@@ -20,10 +20,10 @@ if (isset($_POST['fam']) || isset($_POST['name']) || isset($_POST['em']) || isse
         exit;
     }
 // перевод данных в формат бд
-    $_fam= '"' .$db->real_escape_string($fam). '"'; //_... - означает уже переведенные данные в формат бд
-    $_name= '"' .$db->real_escape_string($name). '"';
-    $_em= '"' .$db->real_escape_string($em). '"';
-    $_pass= '"' .$db->real_escape_string($pass). '"';
+    $_fam= $db->real_escape_string($fam); //_... - означает уже переведенные данные в формат бд
+    $_name= $db->real_escape_string($name);
+    $_em= $db->real_escape_string($em);
+    $_pass= $db->real_escape_string($pass);
 // sql запрос
     $que= "INSERT INTO registration (surname, name, email, pass) VALUES ('$_fam','$_name','$_em','$_pass')";
     $res = $db->query($que);

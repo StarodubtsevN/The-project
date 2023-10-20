@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 global $userId;
 
@@ -12,8 +11,8 @@ if ($DB->connect_errno) {
 if (isset($_POST['login']) || isset($_POST['pass'])) {
     $log=$_POST['login'];
     $pas=$_POST['pass'];
-    $_log= '"' .$DB->real_escape_string($log). '"'; //_... - означает уже переведенные данные в формат бд
-    $_pas= '"' .$DB->real_escape_string($pas). '"';
+    $_log= $DB->real_escape_string($log);
+    $_pas= $DB->real_escape_string($pas);
     if (empty($_POST['login']) || empty($_POST['pass'])){
         echo ("Какое-то поле не заполнено");
 
@@ -24,7 +23,6 @@ if (isset($_POST['login']) || isset($_POST['pass'])) {
    $query->execute();
     $query->bind_result($userId);
     $query->fetch();
-
 
     if($userId) {
         $_SESSION['id'] = $userId;

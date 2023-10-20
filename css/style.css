@@ -71,7 +71,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    
+
 }
 
 .text-block-last {
@@ -170,7 +170,7 @@ body {
     background-color: #A4F9CF;
     border: 0;
     border-top: 2px solid rgba(0, 0, 0, 0.50);
-    
+
 }
 
 .account-text {
@@ -221,7 +221,7 @@ body {
     font-style: inherit;
     color: #E52632;
     font-size: 230px;
-    text-align: center;   
+    text-align: center;
 }
 
 .score-r {
@@ -314,7 +314,7 @@ body {
     width: 580px;
     height: 280px;
     margin: 18px 0 0 25px;
-    
+
 }
 
 .task-text {
@@ -328,7 +328,7 @@ body {
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5; 
+    line-height: 1.5;
 }
 
 h4 {
@@ -344,7 +344,7 @@ h4 {
     top: 18px;
     width: 580px;
     height: 280px;
-    text-align: right;   
+    text-align: right;
 }
 
 .done-text {
@@ -358,7 +358,7 @@ h4 {
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5; 
+    line-height: 1.5;
 }
 
 
@@ -433,7 +433,7 @@ h4 {
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    
+
 }
 
 .head-readmine {
@@ -470,4 +470,20 @@ h4 {
     position: absolute;
     left: 33%;
     top: -130px;
+}
+
+.container-sing-in {
+    height: 640px;
+}
+
+.bottom-reg-sign-in {
+    top: 500px;
+}
+
+.line {
+    top: 580px;
+}
+
+.No {
+    top: 590px;
 }

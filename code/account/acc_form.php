@@ -2,21 +2,15 @@
 require('../_partials/_helpers.php');
 require('../_partials/_header.php');
 require('test_table.php');
-ensureLogIn();
+require ('acc_processor.php');
+// @todo убрать ошибку при вызове функции
+/*ensureLogIn();*/
 global $dev_score;
 global $test_score;
+global $name;
+global $sure_name;
 ?>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/Normalize copy.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Commissioner&display=swap" rel="stylesheet">
-    <title>Хом</title>
-</head>
+
 <body>
 <div class="option-window">
     <div class="photo">
@@ -37,8 +31,8 @@ global $test_score;
 </div>
 <div class="window-account">
     <img src="../../image/Male_User-1024.webp" alt="ваше фото" width="100px" height="100px" class="image-home">
-    <p class="home-name">Валентин</p>
-    <p class="home-surname">Сушков</p>
+    <p class="home-name"><?php echo $name ?></p>
+    <p class="home-surname"><?php echo $sure_name ?></p>
     <p class="home-organisation">Shellpea</p>
     <p class="home-status">Project manager</p>
 </div>

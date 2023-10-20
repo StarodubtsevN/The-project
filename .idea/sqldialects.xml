@@ -2,8 +2,9 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/cli/fetch_data.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/code/account/acc_processor.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/code/account/keep_api.php" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/code/account/test_table.php" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/code/account/test_table.php" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/code/auth/_log-in_processor.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/code/auth/_signup_processor.php" dialect="GenericSQL" />
   </component>
