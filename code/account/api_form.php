@@ -27,6 +27,9 @@ ensureLogIn();
         <a href="<?= url('account/subscription/sub_form') ?>" class="account-text">Подписка</a>
     </div>
     <div class="account">
+        <a href="<?= url('account/_score_form') ?>" class="account-text" type="button">Страница счета</a>
+    </div>
+    <div class="account">
         <a href="<?= url('account/api_form') ?>" class="account-text">Настройки Redmine</a>
     </div>
     <div class="account">

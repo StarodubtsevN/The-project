@@ -2,15 +2,10 @@
 require('../_partials/_helpers.php');
 require('../_partials/_header.php');
 require('test_table.php');
-require ('acc_processor.php');
-// @todo убрать ошибку при вызове функции
-/*ensureLogIn();*/
-global $name;
-global $sure_name;
-global $organization;
-global $position;
+global $dev_score;
+global $test_score;
+ensureLogIn();
 ?>
-
 <body>
 <div class="option-window">
     <div class="photo">
@@ -33,12 +28,5 @@ global $position;
     </div>
 </div>
 
-<div class="window-account">
-    <img src="../../image/Male_User-1024.webp" alt="ваше фото" width="100px" height="100px" class="image-home">
-    <p class="home-name"><?php echo $name ?></p>
-    <p class="home-surname"><?php echo $sure_name ?></p>
-    <p class="home-organisation"><?php echo $organization ?></p>
-    <p class="home-status"><?php echo $position ?></p>
-</div>
-</body>
-</html>
+<?php echo 'Счет разработчиков:'. $dev_score?>
+<?php echo 'Счет тестеров:' . $test_score?>
