@@ -487,3 +487,29 @@ h4 {
 .No-sign-in {
     top: 590px;
 }
+
+.subscription-window {
+    width: 600px;
+    height: 400px;
+}
+
+.text-block-sub {
+    width: 500px;
+    margin-left: 30px;
+}
+
+.bottom-sub {
+    left: 19%;
+    top: 300px;
+}
+
+.head-sub {
+    width: 360px;
+    left: 20%;
+
+}
+
+.photo-sub {
+    top: -420px;
+    left: -3.5%
+}
